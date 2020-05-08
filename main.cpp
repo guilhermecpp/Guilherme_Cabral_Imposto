@@ -14,6 +14,8 @@ int main()
     double imposto_total;
     double maximo_dedutivel;
     double gastos_dedutiveis;
+    double abatido;
+    double imposto_devido;
 
     printf("Renda anual com salario: ");
     scanf("%lf", &salario);
@@ -62,6 +64,16 @@ int main()
 
     printf("Maximo dedutivel: %.2lf\n", maximo_dedutivel);
     printf("Gastos dedutiveis: %.2lf\n", gastos_dedutiveis);
+
+    abatido = min(maximo_dedutivel, gastos_dedutiveis);
+    imposto_devido = imposto_total - abatido;
+
+    printf("\n");
+    printf("RESUMO:\n");
+
+    printf("Imposto bruto total: %.2lf\n", imposto_total);
+    printf("Abatimento: %.2lf\n", abatido);
+    printf("Imposto devido: %.2lf\n", imposto_devido);
 
     return 0;
 }
